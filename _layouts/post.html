@@ -161,6 +161,22 @@ layout: default
     </div>
 </article>
 
+{% if site.gitment %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: '10wjfang',
+    repo: 'blog',
+    oauth: {
+        client_id: 'e0c5e34fb063a763c33f',
+        client_secret: '0defa10a2a32e285bcd8e8f70e7415051ac08b9a',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
+{% endif %}
 
 {% if site.netease_comment %}
 <!-- 网易云跟帖JS代码 start -->
