@@ -73,7 +73,7 @@ ga_domain: auto
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "努力努力再努力"
-sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /blog/img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -95,34 +95,16 @@ friends: [
     #     title: "Su",
     #     href: "http://su.gallery/"
     # },{
-        title: "乱序",
-        href: "http://mida.re/"
+        title: "Bootstrap",
+        href: "https://v3.bootcss.com/"
     },{
-        title: "前端外刊评论",
-        href: "http://qianduan.guru/"
+        title: "纯洁的微信",
+        href: "http://www.ityouknow.com/"
     },{
-        title: "天镶的博客",
-        href: "http://lingyu.wang/"
+        title: "jekyll",
+        href: "https://jekyllrb.com/"
     },{
-        title: "Luke 的自留地",
-        href: "http://hmqk1995.github.io"
-    },{
-        title: "Ebn's Blog",
-        href: "http://ebnbin.com/"
-    },{
-        title: "SmdCn's Blog",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "David's Game",
-        href: "https://www.ruoyaowu.com/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
-    },{
-        title: "解旻的博客",
-        href: "http://xieminis.me/"
+        title: "廖雪峰的官方网站",
+        href: "https://www.liaoxuefeng.com/"
     }
 ]
