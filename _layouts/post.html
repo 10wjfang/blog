@@ -22,6 +22,8 @@ layout: default
     }
     {% endif %}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <header class="intro-header" >
     <div class="header-mask"></div>
     <div class="container">
@@ -90,7 +92,7 @@ layout: default
                     {% endif %}
                 </ul>
                 {% if site.gitment %}
-                <div id="gitmentContainer"></div>
+                <div id="gitalk-container"></div>
                 {% endif %}
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
@@ -163,18 +165,18 @@ layout: default
 </article>
 
 {% if site.gitment %}
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-var gitment = new Gitment({
-    owner: '10wjfang',
-    repo: 'blog',
-    oauth: {
-        client_id: 'e0c5e34fb063a763c33f',
-        client_secret: '0defa10a2a32e285bcd8e8f70e7415051ac08b9a',
-    },
-});
-gitment.render('gitmentContainer');
+var gitalk = new Gitalk({
+  clientID: 'e0c5e34fb063a763c33f',
+  clientSecret: '0defa10a2a32e285bcd8e8f70e7415051ac08b9a',
+  repo: 'blog',
+  owner: '10wjfang',
+  admin: ['10wjfang'],
+  id: location.pathname,      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
 </script>
 {% endif %}
 
