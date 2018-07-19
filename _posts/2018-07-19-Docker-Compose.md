@@ -1,10 +1,12 @@
 ---
 layout: post
-title: 使用Docker部署Spring boot
-subtitle: 安装JDK、Docker、Maven、Docker-Compose环境，使用Docker-Compose部署
+title: "使用Docker部署Spring boot"
+subtitle: "安装JDK、Docker、Maven、Docker-Compose环境，使用Docker-Compose部署"
+author: "Fang"
 date:  2018-7-19 16:31:40
+catalog: true
 tags: 
-	- Docker
+    - Docker
 ---
 
 cloud-favorite
