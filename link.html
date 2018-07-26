@@ -1,0 +1,12 @@
+---
+layout: page
+title: "链接"
+description: "Keep Link"
+header-img: "img/post-bg-os-metro.jpg"
+---
+
+<!-- Chinese Version -->
+<div class="post-container">
+    {% capture link %}{% include link/all.md %}{% endcapture %}
+    {{ link | markdownify }}
+</div>
