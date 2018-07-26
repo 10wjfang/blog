@@ -25,6 +25,9 @@ layout: default
     <!-- PostList Container -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 postlist-container">
                 {{ content }}
+                {% if site.gitment %}
+                <div id="gitalk-container"></div>
+                {% endif %}
             </div>
     <!-- Sidebar Container -->
             <div class="
@@ -72,9 +75,6 @@ layout: default
                 postlist-container
             ">
     			{{ content }}
-                {% if site.gitment %}
-                <div id="gitalk-container"></div>
-                {% endif %}
     		</div>
     <!-- Sidebar Container -->
             <div class="
