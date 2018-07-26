@@ -6,8 +6,29 @@ header-img: "img/post-bg-os-metro.jpg"
 catalog: true
 ---
 
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <!-- Chinese Version -->
 <div class="post-container">
     {% capture link %}{% include link/all.md %}{% endcapture %}
     {{ link | markdownify }}
+    {% if site.gitment %}
+    <div id="gitalk-container"></div>
+    {% endif %}
 </div>
+
+{% if site.gitment %}
+<script>
+var gitalk = new Gitalk({
+  clientID: 'e0c5e34fb063a763c33f',
+  clientSecret: '0defa10a2a32e285bcd8e8f70e7415051ac08b9a',
+  repo: 'blog-comments',
+  owner: '10wjfang',
+  admin: ['10wjfang'],
+  id: "{{page.url}}",      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+
+gitalk.render('gitalk-container')
+</script>
+{% endif %}
