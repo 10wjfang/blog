@@ -75,6 +75,9 @@ layout: default
                 postlist-container
             ">
     			{{ content }}
+                {% if site.gitment %}
+                <div id="gitalk-container"></div>
+                {% endif %}
     		</div>
     <!-- Sidebar Container -->
             <div class="
