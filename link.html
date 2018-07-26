@@ -12,10 +12,10 @@ catalog: true
 <div class="post-container">
     {% capture link %}{% include link/all.md %}{% endcapture %}
     {{ link | markdownify }}
-    {% if site.gitment %}
-    <div id="gitalk-container"></div>
-    {% endif %}
 </div>
+{% if site.gitment %}
+<div id="gitalk-container"></div>
+{% endif %}
 
 {% if site.gitment %}
 <script>
