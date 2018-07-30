@@ -12,7 +12,8 @@
 *   [韩威博客](http://www.hanwei1234.com/) - 韩威java知识分享网
 *   [小柒博客](http://blog.52itstyle.com/) - 小柒博客，一个主JAVA，次架构，偶尔聊聊生活的地方。
 *   [六月](http://www.liuyue.ren/) - 一个博友的博客
-*   [荒蛮故事](../) - 一个分享故事的网站
+*   [程序员DD](http://blog.didispace.com/) - 程序猿DD（翟永超）的技术分享博客
+*   [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)  - 每周五发布
 
 ## 推荐网站
 
@@ -21,7 +22,6 @@
 *   [Spring Cloud中文导航](http://springcloud.fun/) - Spring Cloud的资源导航网站
 *   [MD工具](../md/) - markdown转发html在线工具
 *   [htmlToMD工具](http://relatos.top/2md/) - 在线将页面转发为markdown工具
-*   [云收藏](http://www.favorites.ren/) - 一个在线云端的网络收藏夹，可以分享和查看其它人分享
 *   [wherebt](http://wherebt.com/) - 提供各种BT资源导航,主要收录了bt sync keys的分享网站
 *   [公众号编辑器](http://md.ityouknow.com/) - 可以以优雅的方式在微信公众号去发布markdown文章
 *   [技术博客联盟](http://techblog.pub/) - 原创技术博客作者交流的地方
