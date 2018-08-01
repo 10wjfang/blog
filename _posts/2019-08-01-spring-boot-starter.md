@@ -17,9 +17,9 @@ tags:
 ## 微服务的由来
 
 单体架构：
-![单体图片](/img/in-post/post-spring-boot/post-art1.png)
+![单体图片](../../../img/in-post/post-spring-boot/post-art1.png)
 微服务架构：
-![微服务](/img/in-post/post-spring-boot/post-art2.png)
+![微服务](./img/in-post/post-spring-boot/post-art2.png)
 
 ## 什么是Spring Boot？
 
@@ -139,7 +139,9 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialec
 ## 深入学习
 
 [Spring Boot官网](https://spring.io/projects/spring-boot)
+
 [Spring Boot参考指南-中文版](https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/)
+
 [开源书籍-《微服务：从设计到部署》](https://github.com/DocsHome/microservices)
 
 > 技术上不是问题，意识比工具重要
