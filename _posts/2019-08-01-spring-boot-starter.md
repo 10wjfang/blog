@@ -17,9 +17,9 @@ tags:
 ## 微服务的由来
 
 单体架构：
-![单体图片](../../../img/in-post/post-spring-boot/post-art1.png)
+![单体图片](../../../../img/in-post/post-spring-boot/post-art1.png)
 微服务架构：
-![微服务](./img/in-post/post-spring-boot/post-art2.png)
+![微服务](../../../../img/in-post/post-spring-boot/post-art2.png)
 
 ## 什么是Spring Boot？
 
@@ -47,11 +47,11 @@ Spring Boot是简化Spring应用开发的一个框架，整个Spring技术栈的
 
 ### 目录结构介绍
 
-![img](/img/in-post/post-spring-boot/post01.png)
+![img](../../../../img/in-post/post-spring-boot/post01.png)
 
 官方推荐目录：
 
-![img](/img/in-post/post-spring-boot/post02.png)
+![img](../../../../img/in-post/post-spring-boot/post02.png)
 
 * Application.java 建议放到根目录下面,主要用于做一些框架配置
 * domain目录主要用于实体（Entity）与数据访问层（Repository）
@@ -60,7 +60,7 @@ Spring Boot是简化Spring应用开发的一个框架，整个Spring技术栈的
 
 ### pom.xml介绍
 
-![img](/img/in-post/post-spring-boot/post03.png)
+![img](../../../../img/in-post/post-spring-boot/post03.png)
 
 ### Application.java主程序
 
@@ -109,17 +109,17 @@ spring.profiles.avtive=xxx --指明要使用的配置文件
 
 1. IDEA运行
 
-![img](/img/in-post/post-spring-boot/post04.png)
+![img](../../../../img/in-post/post-spring-boot/post04.png)
 
 2. mvn spring-boot:run
 
 3. mvn package、java -jar 文件名.jar
 
 运行成功：
-![img](/img/in-post/post-spring-boot/post05.png)
+![img](../../../../img/in-post/post-spring-boot/post05.png)
 
 浏览器访问：
-![img](/img/in-post/post-spring-boot/post06.png)
+![img](../../../../img/in-post/post-spring-boot/post06.png)
 
 ## 数据库操作
 
