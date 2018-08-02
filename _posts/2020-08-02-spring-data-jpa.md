@@ -164,6 +164,7 @@ public void testPageQuery() throws Exception {
     userRepository.findALL(pageable);
     userRepository.findByUserName("testName", pageable);
 }
+```
 
 ### 限制查询
 
