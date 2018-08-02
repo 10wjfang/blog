@@ -63,6 +63,7 @@ JpaRepository接口提供了JPA的相关功能：
 - void deleteInBatch(Iterable<T> entities);//删除一个实体集合 
 
 ## 基本查询
+---
 
 基本查询也分为两种，一种是spring data默认已经实现，一种是根据查询的方法来自动解析成SQL。
 
