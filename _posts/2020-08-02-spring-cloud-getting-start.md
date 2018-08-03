@@ -52,7 +52,7 @@ Spring Cloud的子项目，大致可分成两类，一类是对现有成熟框�
 |Spring Cloud Starters|SpringBoot风格starter项目，用以简化Spring Cloud客户端的依赖管理。（项目已经终止并且在Angel.SR2后的版本和其他项目合并）|
 |Spring Cloud CLI|Spring Boot CLI 插件用Groovy快速的创建Spring Cloud组件应用。|
 
-![img](../../../img/in-post/post-spring-cloud/img1.png)
+![img](../../../../img/in-post/post-spring-cloud/img1.png)
 
 ## Spring Cloud和Dubbo比较
 
