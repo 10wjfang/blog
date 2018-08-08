@@ -1,87 +1,79 @@
 ---
 layout: post
-title: 较大分组的位置
-date: 2018-8-8 20:19:14
+title: 连续整数求和
+date: 2018-8-8 20:22:55
 catalog: true
 tags:
     - 算法
 ---
 
-[题目链接](https://leetcode-cn.com/contest/weekly-contest-83/problems/positions-of-large-groups/)
+[题目链接](https://leetcode-cn.com/contest/weekly-contest-83/problems/consecutive-numbers-sum/)
 
 ## 题目
 
-在一个由小写字母构成的字符串 S 中，包含由一些连续的相同字符所构成的分组。
-
-例如，在字符串 S = "abbxxxxzyy" 中，就含有 "a", "bb", "xxxx", "z" 和 "yy" 这样的一些分组。
-
-我们称所有包含大于或等于三个连续字符的分组为较大分组。找到每一个较大分组的起始和终止位置。
-
-最终结果按照字典顺序输出。
+给定一个正整数 `N`，试求有多少组连续正整数满足所有数字之和为 `N`?
 
 
 **示例1:**
 
 ```
-输入: "abbxxxxzzy"
-输出: [[3,6]]
-解释: "xxxx" 是一个起始于 3 且终止于 6 的较大分组。
+输入: 5
+输出: 2
+解释: 5 = 5 = 2 + 3，共有两组连续整数([5],[2,3])求和后为 5。
 ```
 
 **示例2:**
 
 ```
-输入: "abc"
-输出: []
-解释: "a","b" 和 "c" 均不是符合要求的较大分组。
+输入: 9
+输出: 3
+解释: 9 = 9 = 4 + 5 = 2 + 3 + 4
 ```
 
 **示例3:**
 
 ```
-输入: "abcdddeeeeaabbbcd"
-输出: [[3,5],[6,9],[12,14]]
+输入: 15
+输出: 4
+解释: 15 = 15 = 8 + 7 = 4 + 5 + 6 = 1 + 2 + 3 + 4 + 5
 ```
 
 
-**说明：** `1 <= S.length <= 1000`
+**说明：** `1 <= N <= 10 ^ 9`
 
 
 ## 答案
 
-xy投影: >0个数，yz投影: 每行最大数相加，xz投影: 每列最大数相加。
+奇数个时，平均值为整数；偶数个正整数时，平均值小数位0.5
 
 **我的答案：**
 
 ```java
 class Solution {
-    public List<List<Integer>> largeGroupPositions(String S) {
-        char[] chars = S.toCharArray();
-        List<List<Integer>> res = new ArrayList<>();
-        int count = 1;
-        char cur = chars[0];
-        int start = 0;
-        for (int i=1; i<chars.length; i++) {
-            if (cur == chars[i]) {
-                count++;
+    // 15 / 1 = 15
+    // 15 / 2 = 7.5 = 8 + 7
+    // 15 / 3 = 5 = 4 + 5 + 6
+    // 15 / 4 = 3.75
+    // 15 / 5 = 3 = 1 + 2 + 3 + 4 + 5
+    // 15 / 6 = 2.5
+    // 14 = 2+3+4+5 = 14/4
+    // 7 8 9 10 34
+    // 43156417 4
+    public int consecutiveNumbersSum(int N) {
+        int res = 1;
+        int i = 2;
+        double div = 1.0* N / i;
+        while (2*div > i) {
+            if (i % 2 == 0 && div - (int)div == 0.5) {
+                //System.out.println(2*div);
+                res++;
             }
-            else {
-                if (count >= 3) {
-                    List<Integer> item = new ArrayList<>();
-                    item.add(start);
-                    item.add(start+count-1);
-                    res.add(item);
-                }
-                start = i;
-                cur = chars[i];
-                count = 1;
+            if (i % 2 != 0 && div == (int)div) {
+                //System.out.println(2*div);
+                res++;
             }
-        }
-        if (count >= 3) {
-            List<Integer> item = new ArrayList<>();
-            item.add(start);
-            item.add(start+count-1);
-            res.add(item);
+            i++;
+            div = 1.0* N / i;
         }
         return res;
     }
