@@ -26,7 +26,7 @@ RUN echo "Hello docker!"
 
 ## 基本命令
 
-### ADD
+#### ADD
 
 ADD命令有两个参数，源和目标。它的基本作用是从源系统的文件系统上复制文件到目标容器的文件系统。如果源是一个URL，那该URL的内容将被下载并复制到容器中。
 
@@ -35,7 +35,7 @@ ADD命令有两个参数，源和目标。它的基本作用是从源系统的�
 ADD /my_app_folder /my_app_folder 
 ```
 
-### RUN
+#### RUN
 
 RUN命令是Dockerfile执行命令的核心部分。它接受命令作为参数并用于创建镜像。不像CMD命令，RUN命令用于创建镜像（在之前commit的层之上形成新的层）。
 
@@ -44,7 +44,7 @@ RUN命令是Dockerfile执行命令的核心部分。它接受命令作为参数�
 RUN aptitude install -y riak
 ```
 
-### CMD
+#### CMD
 
 和RUN命令相似，CMD可以用于执行特定的命令。和RUN不同的是，这些命令不是在镜像构建的过程中执行的，而是在用镜像构建容器后被调用。
 
@@ -53,7 +53,7 @@ RUN aptitude install -y riak
 CMD "echo" "Hello docker!"
 ```
 
-### ENTRYPOINT
+#### ENTRYPOINT
 
 配置容器启动后执行的命令，并且不可被 docker run 提供的参数覆盖。将docker run 指令后面跟的内容当做参数作为ENTRYPOINT指令指定的运行命令的参数
 
@@ -72,7 +72,7 @@ CMD "Hello docker!"
 ENTRYPOINT echo
 ```
 
-### ENV
+#### ENV
 
 ENV命令用于设置环境变量。这些变量以”key=value”的形式存在，并可以在容器内被脚本或者程序调用。这个机制给在容器中运行应用带来了极大的便利。
 
@@ -81,7 +81,7 @@ ENV命令用于设置环境变量。这些变量以”key=value”的形式存�
 ENV SERVER_WORKS 4
 ```
 
-### FROM
+#### FROM
 
 FROM命令可能是最重要的Dockerfile命令。该命令定义了使用哪个基础镜像启动构建流程。基础镜像可以为任意镜像。如果基础镜像没有被发现，Docker将试图从Docker image index来查找该镜像。FROM命令必须是Dockerfile的首个命令。
 
@@ -90,7 +90,7 @@ FROM命令可能是最重要的Dockerfile命令。该命令定义了使用哪个
 FROM ubuntu 
 ```
 
-### EXPOSE
+#### EXPOSE
 
 EXPOSE用来指定端口，使容器内的应用可以通过端口和外界交互。
 
@@ -99,7 +99,7 @@ EXPOSE用来指定端口，使容器内的应用可以通过端口和外界交�
 EXPOSE 8080
 ```
 
-### MAINTAINER
+#### MAINTAINER
 
 建议这个命令放在Dockerfile的起始部分，虽然理论上它可以放置于Dockerfile的任意位置。这个命令用于声明作者，并应该放在FROM的后面。
 
@@ -108,7 +108,7 @@ EXPOSE 8080
 MAINTAINER authors_name 
 ```
 
-### USER
+#### USER
 
 USER命令用于设置运行容器的UID。
 
@@ -117,7 +117,7 @@ USER命令用于设置运行容器的UID。
 USER 751
 ```
 
-### VOLUME
+#### VOLUME
 
 VOLUME命令用于让你的容器访问宿主机上的目录。
 
@@ -126,7 +126,7 @@ VOLUME命令用于让你的容器访问宿主机上的目录。
 VOLUME ["/my_files"]
 ```
 
-### WORKDIR
+#### WORKDIR
 
 WORKDIR命令用于设置CMD指明的命令的运行目录。
 
