@@ -54,6 +54,24 @@ Spring Cloud的子项目，大致可分成两类，一类是对现有成熟框�
 
 ![img](../../../../img/in-post/post-spring-cloud/img1.png)
 
+### Spring Cloud Netflix介绍
+
+#### Netflix Eureka
+
+服务中心，云端服务发现，一个基于 REST 的服务，用于定位服务，以实现云端中间层服务发现和故障转移。
+
+#### Netflix Hystrix
+
+熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。
+
+#### Netflix Zuul
+
+Zuul 是在云平台上提供动态路由,监控,弹性,安全等边缘服务的框架。Zuul 相当于是设备和 Netflix 流应用的 Web 网站后端所有请求的前门。
+
+#### Netflix Archaius
+
+配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。可以实现动态获取配置， 原理是每隔60s（默认，可配置）从配置源读取一次内容，这样修改了配置文件后不需要重启服务就可以使修改后的内容生效，前提使用archaius的API来读取。
+
 ## Spring Cloud和Dubbo比较
 
 ---
