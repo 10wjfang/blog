@@ -26,7 +26,7 @@ Eureka由3个角色组成：
 
 ## 创建服务注册中心
 
-1. 创建一个基础的Spring Boot工程，并在`pom.xml`中引入需要的依赖内容：
+1、创建一个基础的Spring Boot工程，并在`pom.xml`中引入需要的依赖内容：
 
 ```xml
 <parent>
@@ -67,7 +67,7 @@ Eureka由3个角色组成：
 </dependencyManagement>
 ```
 
-2. 通过@EnableEurekaServer注解启动一个服务注册中心提供给其他应用进行对话。
+2、通过@EnableEurekaServer注解启动一个服务注册中心提供给其他应用进行对话。
 
 ```java
 @SpringBootApplication
@@ -80,7 +80,7 @@ public class RegistryApplication {
 }
 ```
 
-3. 在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，只需要在application.properties
+3、在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，只需要在application.properties
 
 ```properties
 server.port=8000
@@ -92,7 +92,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
 
 ## 创建服务提供方
 
-1. 首先，创建一个基本的Spring Boot应用，在`pom.xml`中，加入如下配置：
+1、首先，创建一个基本的Spring Boot应用，在`pom.xml`中，加入如下配置：
 
 ```xml
 <parent>
@@ -128,7 +128,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
 </dependencyManagement>
 ```
 
-2. 在主类中通过加上`@EnableDiscoveryClient`注解。
+2、在主类中通过加上`@EnableDiscoveryClient`注解。
 
 ```java
 @SpringBootApplication
@@ -140,7 +140,7 @@ public class ProducerApplication {
 }
 ```
 
-3. 对application.properties做一些配置工作，具体如下：
+3、对application.properties做一些配置工作，具体如下：
 
 ```properties
 spring.application.name=spring-cloud-producer
@@ -154,7 +154,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
 
 ## 创建服务消费方
 
-1. 首先，创建一个基本的Spring Boot应用，在`pom.xml`中，加入如下配置：
+1、首先，创建一个基本的Spring Boot应用，在`pom.xml`中，加入如下配置：
 
 ```xml
 <dependencies>
@@ -170,7 +170,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
 </dependencies>
 ```
 
-2. 修改配置文件application.properties：
+2、修改配置文件application.properties：
 
 ```properties：
 spring.application.name=spring-cloud-consumer
@@ -178,7 +178,7 @@ server.port=9001
 eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
 ```
 
-3. 修改启动类，添加@EnableDiscoveryClient和@EnableFeignClients注解。
+3、修改启动类，添加@EnableDiscoveryClient和@EnableFeignClients注解。
 
 ```java
 @SpringBootApplication
@@ -198,7 +198,7 @@ public class ConsumerApplication {
 
 > Feign是一个声明式Web Service客户端。使用Feign能让编写Web Service客户端更加简单, 它的使用方法是定义一个接口，然后在上面添加注解，同时也支持JAX-RS标准的注解。Feign也支持可拔插式的编码器和解码器。Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。Feign可以与Eureka和Ribbon组合使用以支持负载均衡。
 
-4. Feign调用
+4、Feign调用
 
 ```java
 @FeignClient(name= "spring-cloud-producer")
@@ -211,7 +211,7 @@ public interface HelloRemote {
 
 - name:远程服务名，及spring.application.name配置的名称
 
-5. 调用远程服务
+5、调用远程服务
 
 ```java
 @RestController
@@ -230,7 +230,7 @@ public class ConsumerController {
 
 ## Eureka集群
 
-application.yml配置详情如下：
+1、application.yml配置详情如下：
 
 ```yml
 ---
@@ -274,7 +274,7 @@ eureka:
       defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/
 ```
 
-分别以peer1、peer2、peer3的配置参数启动eureka注册中心。
+2、分别以peer1、peer2、peer3的配置参数启动eureka注册中心。
 
 ```sh
 java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
