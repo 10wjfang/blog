@@ -5,6 +5,7 @@ date: 2018-8-2 09:33:52
 catalog: true
 tags:
     - Spring Boot
+    - JPA
 ---
 
 ## Spring Data JPA介绍

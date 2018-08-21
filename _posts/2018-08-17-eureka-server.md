@@ -5,7 +5,7 @@ date: 2018-8-17 10:41:35
 catalog: true
 tags:
     - Spring Cloud
-    - Spring Boot
+    - Eureka
 ---
 
 > Eureka 是一个基于 REST 的服务，主要在 AWS 云中使用, 定位服务来进行中间层服务器的负载均衡和故障转移。
