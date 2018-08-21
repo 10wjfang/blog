@@ -139,10 +139,12 @@ public class HelloController {
 
     @RequestMapping("/hello/{name}")
     public String hello(@PathVariable(name = "name") String name) {
-        return restTemplate.getForObject("http://localhost:8080/hello?name="+name, String.class);
+        return restTemplate.getForObject("http://SPRING-CLOUD-PRODUCER/hello?name="+name, String.class);
     }
 }
 ```
+
+- SPRING-CLOUD-PRODUCER：服务提供方应用程序名称，不需要加端口
 
 ## 总结
 
