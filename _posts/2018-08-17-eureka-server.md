@@ -6,6 +6,7 @@ catalog: true
 tags:
     - Spring Cloud
     - Eureka
+    - Feign
 ---
 
 > Eureka 是一个基于 REST 的服务，主要在 AWS 云中使用, 定位服务来进行中间层服务器的负载均衡和故障转移。
