@@ -1,161 +1,114 @@
 ---
 layout: post
-title: 负载均衡Ribbon基本使用
-date: 2018-8-21 11:43:52
+title: 测试工具JMeter入门
+date: 2018-8-23 14:12:58
 catalog: true
 tags:
-    - Spring Cloud
-    - Ribbon
+    - JMeter
 ---
 
-> - Ribbon版本：1.4.4.RELEASE
-> - Eureka版本：1.4.4.RELEASE
-> - Spring Boot版本：2.0.3.RELEASE
-> - Spring Cloud版本：Finchley.RELEASE
+## 简介
 
-## Ribbon介绍
+JMeter是一个软件，使负载测试或业绩为导向的业务（功能）测试不同的协议或技术。 它是Apache软件基金会的Stefano Mazzocchi JMeter的最初的开发。它主要对 Apache JServ（现在称为如Apache Tomcat项目）的性能进行测试。Apache后来重新设计JMeter 增强的图形用户界面和添加功能测试能力。这是一个具有图形界面，使用Swing 图形API 的 Java 桌面应用程序，因此可以运行在任何环境/工作站接受一个Java 虚拟机，例如：在Windows，Linux，MAC等。
 
-Ribbon是Netflix发布的负载均衡器，它有助于控制HTTP和TCP的客户端的行为。为Ribbon配置服务提供者地址后，Ribbon就可基于某种负载均衡算法，自动地帮助服务消费者去请求。Ribbon默认为我们提供了很多负载均衡算法，例如轮询、随机等。当然，我们也可为Ribbon实现自定义的负载均衡算法。
+## JMeter是如何工作？
 
->  Feign已经默认使用了Ribbon
+JMeter中模拟一组用户发送到目标服务器的请求和回报目标服务器/应用程序的性能/功能的统计数字表明，通过表格，图形等下图描述了这个过程。
 
-## 和RestTemplate相结合
+## JMeter主要的组件
 
-传统情况下在java代码里访问restful服务，一般使用Apache的HttpClient。不过此种方法使用起来太过繁琐。spring提供了一种简单便捷的模板类来进行操作，这就是RestTemplate。为了实现负载均衡，可以给RestTemplate添加注解@LoadBalanced。
+#### 测试计划
 
-> 依赖：spring-boot-starter-web，避免报Unregistering JMX-exposed beans on shutdown错误
+可以将测试计划可视化为用于运行测试的JMeter脚本。 测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。测试计划中包含的所有内容都按照从上到下的顺序执行，或者按照测试计划中定义的顺序执行。
 
-## 原理
+![img](../../../../img/in-post/post-jmeter/1.png)
 
-Ribbon的负载均衡，主要通过LoadBalancerClient来实现的，而LoadBalancerClient具体交给了ILoadBalancer来处理，ILoadBalancer通过配置IRule、IPing等信息，并向EurekaClient获取注册列表的信息，并默认10秒一次向EurekaClient发送“ping”,进而检查是否更新服务列表，最后，得到注册列表后，ILoadBalancer根据IRule的策略进行负载均衡。
+#### 线程组
 
-而RestTemplate 被@LoadBalance注解后，能过用负载均衡，主要是维护了一个被@LoadBalance注解的RestTemplate列表，并给列表中的RestTemplate添加拦截器，进而交给负载均衡器去处理。
+线程组表示JMeter在测试期间将使用的线程组。 线程组元素是任何测试计划的起点。
 
-## 实践
+- 线程数：相当于用户数
+- 加速时间（Ramp-up period）：所有线程在多少时间内启动
 
-#### 准备工作
+![img](../../../../img/in-post/post-jmeter/2.png)
 
-1、启动Eureka服务注册中心。
+#### Sampler采集器
 
-2、启动Eureka服务提供方。
+采样器是允许JMeter将特定类型的请求发送到服务器的组件。它模拟用户对目标服务器的页面的请求。采样器是必须将组件添加到测试计划中的，因为它只能让JMeter知道需要将哪种类型的请求发送到服务器。 请求可以是HTTP，HTTP(s)，FTP，TCP，SMTP，SOAP等。
 
-3、新建一个spring boot项目，修改pom.xml文件
+请求第一个接口：
 
-```xml
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.0.3.RELEASE</version>
-</parent>
+![img](../../../../img/in-post/post-jmeter/3.png)
 
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka</artifactId>
-        <version>1.4.4.RELEASE</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-ribbon</artifactId>
-        <version>1.4.4.RELEASE</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-    </dependency>
-</dependencies>
+获取第一个接口返回值作为参数请求第二个接口：
 
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Finchley.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+![img](../../../../img/in-post/post-jmeter/6.png)
 
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <fork>true</fork>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-```
+#### 后置处理器
 
-> 注意：
-> 1. 需要添加spring-cloud-starter-eureka依赖，不然发现不了服务，其实 Ribbon 也支持脱离 Eureka 使用，以适应不具备 Eureka 使用条件，需要修改application.properties文件：
-`service-provider.ribbon.listOfServers=http://localhost:8000`
-> 2. Spring Cloud和Spring Boot版本要匹配
+在发出采样器请求之后执行后处理器元素。 如果后处理器连接到Sampler元素，那么它将在该sampler元素运行之后执行。后处理器最常用于处理响应数据，例如，为了将来目的而提取特定值。下面给出了JMeter提供的所有后处理器元素的列表：
 
-4、新建Application.java文件
+- CSS/JQuery抽取器
+- BeanShell后处理器
+- JSR223后处理器
+- JDBC后处理器
+- 调试后处理器
+- 正则表达式提取器
+- XPath抽取器
+- 结果状态操作处理程序
+- BSF后处理器
 
-```java
-@EnableDiscoveryClient
-@SpringBootApplication
-public class Application {
+正则表达式提取器：
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+![img](../../../../img/in-post/post-jmeter/4.png)
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-}
-```
+#### 逻辑控制器
 
-- @EnableDiscoveryClient：添加发现服务能力
-- @LoadBalanced注解开启均衡负载能力，如果不加@LoadBalanced注解的话，会报java.net.UnknownHostException
+逻辑控制器可帮助您控制线程中采样器处理顺序的流程。 它还可以更改来自其子元素的请求的顺序。以下是JMeter中所有逻辑控制器的列表：
+- 运行时控制器
+- IF控制器
+- 事务控制器
+- 录音控制器
+- 简单控制器
+- while控制器
+- Switch控制器
+- ForEach控制器
+- 模块控制器
+- 包括控制器
+- 循环控制器
+- 仅一次控制器
+- 交错控制器
+- 随机控制器
+- 随机顺序控制器
+- 吞吐量控制器
 
-5、添加application.properties
+ForEach控制器：
+![img](../../../../img/in-post/post-jmeter/5.png)
 
-```properties
-server.port=8010
-spring.application.name=spring-cloud-ribbon
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
-```
+#### 监听器
 
-6、创建Controller类
+当JMeter的采样器组件被执行时，监听器提供JMeter收集的关于那些测试用例的数据的图形表示。它便于用户在某些日志文件中以表格，图形，树或简单文本的形式查看采样器结果。监听器可以在测试的任何地方进行调整，直接包括在测试计划下。JMeter提供了大约15个监听器，但主要使用的是表，树和图形。以下是JMeter中所有监听器的列表：
 
-```java
-@RestController
-public class HelloController {
-    @Autowired
-    private RestTemplate restTemplate;
+- 图表结果
+- 样条曲线可视化器
+- 断言结果
+- 简单的数据编写者
+- 监控结果
+- 分布图(alpha)
+- 聚合图
+- 梅勒展示台
+- BeanShell监听器
+- 总结报告
+- 示例结果保存配置
+- 图表完整结果
+- 查看结果树
+- 汇总报告
+- 查看表格中的结果
 
-    @RequestMapping("/hello/{name}")
-    public String hello(@PathVariable(name = "name") String name) {
-        return restTemplate.getForObject("http://SPRING-CLOUD-PRODUCER/hello?name="+name, String.class);
-    }
-}
-```
+查看结果树：
 
-- SPRING-CLOUD-PRODUCER：服务提供方应用程序名称，不需要加端口
+![img](../../../../img/in-post/post-jmeter/7.png)
 
-## 总结
+参考
 
-在Spring cloud 中服务之间通过restful方式调用有两种方式 
-- restTemplate+Ribbon 
-- feign
-
-ribbon是对服务之间调用做负载，是服务之间的负载均衡，zuul是可以对外部请求做负载均衡。 
-
-## 参考
-
-[深入理解Ribbon之源码解析](https://blog.csdn.net/forezp/article/details/74820899)
-
-[Spring Cloud构建微服务架构（二）服务消费者](http://blog.didispace.com/springcloud2/)
+[JMeter教程](https://www.yiibai.com/jmeter)
