@@ -85,7 +85,7 @@ Zuul路由有两种方式：
   - 默认serviceId：path默认是`微服务在Eureka上的serviceId/**`
   - 指定serviceId：
     > zuul.routes.api-a.path=/**
-zuul.routes.api-a.serviceId=spring-cloud-producer
+    > zuul.routes.api-a.serviceId=spring-cloud-producer
 
 #### 3、修改启动类
 
