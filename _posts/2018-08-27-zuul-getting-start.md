@@ -83,7 +83,8 @@ Zuul路由有两种方式：
 - url映射：zuul.routes.api-a.url: http://192.168.1.10:8081
 - serviceId映射
   - 默认serviceId：path默认是`微服务在Eureka上的serviceId/**`
-  - 指定serviceId：zuul.routes.api-a.path=/**
+  - 指定serviceId：
+    > zuul.routes.api-a.path=/**
 zuul.routes.api-a.serviceId=spring-cloud-producer
 
 #### 3、修改启动类
