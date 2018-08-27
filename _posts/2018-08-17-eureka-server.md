@@ -163,6 +163,10 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-eureka</artifactId>
 	</dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-test</artifactId>
@@ -211,6 +215,7 @@ public interface HelloRemote {
 ```
 
 - name:远程服务名，及spring.application.name配置的名称
+- 依赖spring-cloud-starter-openfeign
 
 5、调用远程服务
 
