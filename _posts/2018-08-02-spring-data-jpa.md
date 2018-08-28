@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Data JPA介绍和使用
+title: Spring Boot（二）：Spring Data JPA介绍和使用
 date: 2018-8-2 09:33:52
 catalog: true
 tags:
