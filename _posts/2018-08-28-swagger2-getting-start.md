@@ -42,7 +42,7 @@ tags:
 
 可能会出现@EnableSwagger2注解找不到依赖的问题。
 
-> 解决：这里Spring Cloud用的是2.0.1.RELEASE版，Swagger2最新版2.8.0不支持，需要根据Spring Cloud的版本选择Swagger2的版本，这里选择2.7.0，检查Maven的是否有swagger-ui这个包
+> 解决：这里Spring Cloud用的是2.0.1.RELEASE版，Swagger2最新版2.8.0不支持，需要根据Spring Cloud的版本选择Swagger2的版本，这里选择2.7.0，检查Maven包中是否有swagger-ui这个包
 
 #### 2、创建配置类
 
@@ -138,3 +138,29 @@ Swagger2相关注解说明：
 访问：`http://localhost:8080/swagger-ui.html`
 
 ![img](../../../../img/in-post/post-spring-boot/swagger01.png)
+
+如果访问出现404，则需要修改拦截器配置
+
+```java
+@Configuration
+public class MyWebMvcConfig extends WebMvcConfigurationSupport {
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyHandlerInterceptor());
+    }
+
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 修复静态资源访问404的问题
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+}
+```
+
+## 参考
+
+[Swagger2离线文档：PDF和Html5格式](https://blog.csdn.net/fly910905/article/details/79131755)
+[Spring Boot中使用Swagger2构建强大的RESTful API文档](http://blog.didispace.com/springbootswagger2/)
+[SpringBoot配置SwaggerUI访问404错误](https://www.cnblogs.com/moncat/p/7218061.html)
