@@ -162,5 +162,7 @@ public class MyWebMvcConfig extends WebMvcConfigurationSupport {
 ## 参考
 
 [Swagger2离线文档：PDF和Html5格式](https://blog.csdn.net/fly910905/article/details/79131755)
+
 [Spring Boot中使用Swagger2构建强大的RESTful API文档](http://blog.didispace.com/springbootswagger2/)
+
 [SpringBoot配置SwaggerUI访问404错误](https://www.cnblogs.com/moncat/p/7218061.html)
