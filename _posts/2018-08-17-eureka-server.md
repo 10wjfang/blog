@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 服务注册与发现Eureka
+title: Spring Cloud（二）：服务注册与发现Eureka
 date: 2018-8-17 10:41:35
 catalog: true
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 配置中心Spring Cloud Config
+title: Spring Cloud（四）：配置中心Spring Cloud Config
 date: 2018-8-25 09:50:00
 catalog: true
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 负载均衡Ribbon基本使用
+title: Spring Cloud（三）：负载均衡Ribbon基本使用
 date: 2018-8-21 11:43:52
 catalog: true
 tags:
