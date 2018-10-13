@@ -14,6 +14,7 @@
 *   [六月](http://www.liuyue.ren/) - 一个博友的博客
 *   [程序员DD](http://blog.didispace.com/) - 程序猿DD（翟永超）的技术分享博客
 *   [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)  - 每周五发布
+*   [过往记忆](https://www.iteblog.com/) - 专注大数据技术及应用
 
 ## 推荐网站
 
