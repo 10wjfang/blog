@@ -24,7 +24,7 @@ tags:
 |使用接口(多语言能力)|http（sidecar）|支持 http 和 dns|客户端|http/grpc|
 |watch 支持|支持 long polling/大部分增量|全量/支持long |polling	支持|支持 long polling|
 |自身监控|metrics|metrics|—|metrics|
-|安全|—|acl|/https|acl|https 支持（弱）|
+|安全|—|acl /https|acl|https 支持（弱）|
 |spring cloud 集成|已支持|已支持|已支持|已支持|
 
 ## Consul介绍
@@ -132,6 +132,7 @@ server.port=8501
 spring.cloud.consul.host=localhost
 spring.cloud.consul.port=8500
 #注册到consul的服务名称
+
 spring.cloud.consul.discovery.service-name=service-producer
 ```
 
@@ -163,7 +164,7 @@ public class HelloController {
 }
 ```
 
-启动成功后，`http://localhost:8500`可以看到添加了一个服务。
+启动成功后，访问`http://localhost:8500`可以看到添加了一个服务。
 
 #### 3、开发服务消费者
 
@@ -289,7 +290,7 @@ public interface HelloRemote {
 
 ## 总结
 
-Consul使用起来比Eureka方便，不需要写服务注册中心，而且UI比较简洁。
+Consul使用起来比Eureka方便，不需要写服务注册中心，而且UI比较简洁。部署多个服务提供者就可以实现负载均衡。
 
 ## 参考
 
