@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spring Cloud（七）：配置中心和消息总线Spring Cloud Bus
-date: 2018-8-25 09:50:00
+date: 2018-10-26 16:48:37
 catalog: true
 tags:
     - Spring Cloud
