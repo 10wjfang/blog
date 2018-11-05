@@ -70,6 +70,10 @@ spring:
 
 spring.zipkin.base-url指定了Zipkin服务器的地址，spring.sleuth.sampler.probability将采样比例设置为1.0，也就是全部都需要。
 
+**3. 测试**
+
+在浏览器输入：`http://localhost:8082/hello`，，然后再打开地址： http://localhost:9411/zipkin/点击对应按钮进行查看。
+
 ## 参考
 
 [springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪](http://www.ityouknow.com/springcloud/2018/02/02/spring-cloud-sleuth-zipkin.html)
