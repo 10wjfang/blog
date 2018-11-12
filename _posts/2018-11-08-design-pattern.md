@@ -114,4 +114,4 @@ tags:
 
 ## 参考
 
-[设计模式 | 菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
+[设计模式|菜鸟教程](http://www.runoob.com/design-pattern/design-pattern-tutorial.html)
