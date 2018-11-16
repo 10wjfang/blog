@@ -50,6 +50,14 @@ tags:
 
 > Ctrl+Shift+Alt+U
 
+11、向上建立一空行
+
+> ctrl+alt+enter
+
+12、向下建立一空行
+
+> shift+enter
+
 ## 快速编码
 
 > sout=System.out.println();
