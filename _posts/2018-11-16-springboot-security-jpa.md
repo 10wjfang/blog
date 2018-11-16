@@ -276,7 +276,7 @@ public class MD5PasswordEncoder {
 
 ## 总结
 
-![img](../../../../img/in-post/post-spring-spring/post07.png)
+![img](../../../../img/in-post/post-spring-boot/post07.png)
 
 Spring Security中进行身份验证的是AuthenticationManager接口，ProviderManager是它的一个默认实现，但它并不用来处理身份认证，而是委托给配置好的AuthenticationProvider，每个AuthenticationProvider会轮流检查身份认证。检查后或者返回Authentication对象或者抛出异常。
 
