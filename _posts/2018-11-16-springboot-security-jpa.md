@@ -274,6 +274,16 @@ public class MD5PasswordEncoder {
 
 访问`http://localhost:8080/`，点击链接，跳转到`http://localhost:8080/hello`，这时候被重定向到`http://localhost:8080/login`，输入错误的用户名或密码，如果用户身份认证失败，页面就重定向到`/login?error`，输入正确的用户名`admin`和密码`123456`，跳转到`/hello`页面。
 
+## 总结
+
+![img](../../../../img/in-post/post-spring-spring/post07.png)
+
+Spring Security中进行身份验证的是AuthenticationManager接口，ProviderManager是它的一个默认实现，但它并不用来处理身份认证，而是委托给配置好的AuthenticationProvider，每个AuthenticationProvider会轮流检查身份认证。检查后或者返回Authentication对象或者抛出异常。
+
+ 验证身份就是加载响应的UserDetails，看看是否和用户输入的账号、密码、权限等信息匹配。此步骤由实现AuthenticationProvider的DaoAuthenticationProvider（它利用UserDetailsService验证用户名、密码和授权）处理。包含 GrantedAuthority 的 UserDetails对象在构建 Authentication对象时填入数据。
+
 ## 参考
 
 [Spring security 自定义密码验证（一）](https://blog.csdn.net/f1370335844/article/details/80084085)
+
+[Spring Security身份认证之UserDetailsService](https://blog.csdn.net/my_learning_road/article/details/79833802)
