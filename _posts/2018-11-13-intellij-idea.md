@@ -58,6 +58,10 @@ tags:
 
 > shift+enter
 
+13、重命名
+
+> Alt+Shift+R
+
 ## 快速编码
 
 > sout=System.out.println();
