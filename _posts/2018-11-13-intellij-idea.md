@@ -75,3 +75,5 @@ tags:
 > psvm=public static void main(String[] args) {}
 
 > fori=for (int i = 0; i < ; i++) {}
+
+> iter=for (Object o in objects) {}
