@@ -87,8 +87,11 @@ JVM是Java Virtual Machine的缩写，JVM是一种用于计算设备的规范，
 那怎么确定GC Root呢，一般包含以下几种对象：
 
 1、虚拟机栈（栈中的`局部变量表`）中引用的对象；
+
 2、方法区中类`静态`属性引用的对象；
+
 3、方法区中`常量`引用的对象；
+
 4、`本地方法栈`中JNI（即一般说的Native方法）引用的对象。
 
 ## 垃圾回收器
@@ -173,20 +176,24 @@ MAT插件的下载地址为：http://download.eclipse.org/mat/1.3/update-site/
 - -XX:NewRatio=n:设置年轻代和年老代的比值。如:为3，表示年轻代与年老代比值为1：3，年轻代占整个年轻代年老代和的1/4
 - -XX:SurvivorRatio=n:年轻代中Eden区与两个Survivor区的比值。注意Survivor区有两个。如：3，表示Eden：Survivor=3：2，一个Survivor区占整个年轻代的1/5
 - -XX:MaxPermSize=n:设置持久代大小
+
 2.收集器设置
 - -XX:+UseSerialGC:设置串行收集器
 - -XX:+UseParallelGC:设置并行收集器
 - -XX:+UseParalledlOldGC:设置并行年老代收集器
 - -XX:+UseConcMarkSweepGC:设置并发收集器
+
 3.垃圾回收统计信息
 - -XX:+PrintGC
 - -XX:+PrintGCDetails
 - -XX:+PrintGCTimeStamps
 - -Xloggc:filename
+
 4.并行收集器设置
 - -XX:ParallelGCThreads=n:设置并行收集器收集时使用的CPU数。并行收集线程数。
 - -XX:MaxGCPauseMillis=n:设置并行收集最大暂停时间
 - -XX:GCTimeRatio=n:设置垃圾回收时间占程序运行时间的百分比。公式为1/(1+n)
+
 5.并发收集器设置
 - -XX:+CMSIncrementalMode:设置为增量模式。适用于单CPU情况。
 - -XX:ParallelGCThreads=n:设置并发收集器年轻代收集方式为并行收集时，使用的CPU数。并行收集线程数。
