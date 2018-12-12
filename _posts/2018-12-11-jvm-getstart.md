@@ -99,6 +99,7 @@ JVM是Java Virtual Machine的缩写，JVM是一种用于计算设备的规范，
 分代的垃圾回收策略，是基于这样一个事实：不同的对象的生命周期是不一样的。因此，不同生命周期的对象可以采取不同的回收算法，以便提高回收效率。
 
 新生代收集器使用的收集器：Serial、PraNew、Parallel Scavenge
+
 老年代收集器使用的收集器：Serial Old、Parallel Old、CMS
 
 ## GC日志
