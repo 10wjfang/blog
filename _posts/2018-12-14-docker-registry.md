@@ -26,9 +26,9 @@ docker pull registry
 ## 启动Registryr容器
 
 ```sh
-docker run -d   --name=my-docker-registry  --restart=always -p 5000:5000   -v  /opt/data/registry:ls /var/lib/registry/docker/registry/v2/repositories    registry
+docker run -d   --name=my-docker-registry  --restart=always -p 5000:5000   -v  /opt/data/registry:/var/lib/registry/docker/registry/v2/repositories    registry
 
-#说明：启动一个名字为 my-docker-registry-2 的容器，端口映射到宿主机的5000，挂载宿主机目录 /opt/data/registry 到容器的 ls /var/lib/registry/docker/registry/v2/repositories ，用于存储 push 进去的镜像文件。
+#说明：启动一个名字为 my-docker-registry-2 的容器，端口映射到宿主机的5000，挂载宿主机目录 /opt/data/registry 到容器的/var/lib/registry/docker/registry/v2/repositories ，用于存储 push 进去的镜像文件。
 ```
 
 ## 测试
@@ -54,7 +54,7 @@ docker push 192.168.241.135:5000/ubuntu:16.04
 > *可能会报错*：The push refers to repository [192.168.241.135:5000/ubuntu：16.04]
 Get https://192.168.241.135:5000/v2/: http: server gave HTTP response to HTTPS client
 > *解决办法*：在”/etc/docker/“目录下，创建”daemon.json“文件。在文件中写入：
-> { "insecure-registries":["192.168.1.100:5000"] }
+> { "insecure-registries":["192.168.241.135:5000"] }
 
 4、查看镜像是否已上传成功，访问：`http://192.168.241.135:5000/v2/_catalog`
 
