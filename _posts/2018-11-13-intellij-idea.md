@@ -62,6 +62,10 @@ tags:
 
 > Alt+Shift+R
 
+14、新建类
+
+> 选中文件夹，alt + insert
+
 ## 快速编码
 
 > sout=System.out.println();
