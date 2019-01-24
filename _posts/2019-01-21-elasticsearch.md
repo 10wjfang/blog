@@ -29,7 +29,7 @@ tags:
 *注意：需要先安装JDK，不能用root账号运行*
 
 ```sh
-/opt/elasticsearch/bin/elasticsearch
+/opt/elasticsearch/bin/elasticsearch -d
 ```
 
 **可能遇到问题：**
@@ -51,3 +51,10 @@ tags:
 ```sh
 ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v5.6.4/elasticsearch-analysis-ik-5.6.4.zip
 ```
+
+如果网络有问题，下载太慢，可以先下载：
+
+下载地址：`https://github.com/medcl/elasticsearch-analysis-ik/releases`
+创建文件夹：`cd your-es-root/plugins/ && mkdir ik`
+unzip解压到文件夹：`your-es-root/plugins/ik`
+重启ES。
