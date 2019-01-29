@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Swagger访问OAuth安全的API
+title: Swagger访问安全的API
 date: 2019-1-29 13:58:32
 catalog: true
 tags:
