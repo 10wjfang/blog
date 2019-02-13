@@ -20,8 +20,11 @@ tags:
 ## Spring Security认证过程
 
 1、用户名和密码被封装成`Authentication`,通常情况下是`UsernamePasswordAuthenticationToken`这个实现类。
+
 2、`AuthenticationManager` 身份管理器负责验证这个`Authentication`。
+
 3、认证成功后，`AuthenticationManager`身份管理器返回一个被填充满了信息的（包括上面提到的权限信息，身份信息，细节信息，但密码通常会被移除）`Authentication`实例。
+
 4、`SecurityContextHolder`安全上下文容器将第3步填充了信息的`Authentication`，通过`SecurityContextHolder.getContext().setAuthentication(…)`方法，设置到其中。
 
 ![img](../../../../img/in-post/post-spring-security/3.jpg)
