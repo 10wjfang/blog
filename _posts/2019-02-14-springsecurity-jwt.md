@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring Security集成JWT
+title: Spring Security（四）：集成JWT
 date: 2019-2-14 10:32:43
 catalog: true
 tags:
