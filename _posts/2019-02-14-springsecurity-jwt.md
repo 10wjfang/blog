@@ -21,6 +21,10 @@ tags:
 
 2、继承`WebSecurityConfigurerAdapter`类
 
+3、实现`UserDetailsService`接口
+
+4、实现`AuthenticationProvider`接口
+
 ## 知识准备
 
 #### BasicAuthenticationFilter
@@ -229,7 +233,7 @@ curl http://localhost:8899/test
 2、登录
 
 ```sh
-curl -i -H"Content-Type: application/json" -X POST -d '{"username":"admin","password":"password"}' http://localhost:8080/login
+curl -i -H"Content-Type: application/json" -X POST -d '{"username":"111","password":"123"}' http://localhost:8899/login
 ```
 
 返回带有token的信息。
