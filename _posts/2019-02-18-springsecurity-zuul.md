@@ -4,7 +4,7 @@ title: Spring Security（六）：集成Zuul搭建全局验证架构
 date: 2019-2-18 17:56:34
 catalog: true
 tags:
-    - Spring Cloud Zuul
+    - Zuul
     - Spring Security
 ---
 
@@ -310,7 +310,7 @@ auth.permit.patterns=/auth-server/**,/actuator/**
 
 提供业务服务，不需要做任何改动。
 
-[示例代码]( https://github.com/10wjfang/spring-cloud-demo)
+[示例代码：springcloud-auth]( https://github.com/10wjfang/spring-cloud-demo)
 
 ## 参考
 
