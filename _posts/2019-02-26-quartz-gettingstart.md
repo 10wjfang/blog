@@ -103,7 +103,7 @@ public class MyScheduler {
 
 或者复制下面的SQL：
 
-```sql
+```
 #
 # In your Quartz properties file, you'll need to set 
 # org.quartz.jobStore.driverDelegateClass = org.quartz.impl.jdbcjobstore.StdJDBCDelegate
