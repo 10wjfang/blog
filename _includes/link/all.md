@@ -40,3 +40,29 @@
 *  [在线编程工具](https://www.jdoodle.com/)
 *  [在线翻译](http://dict.cn/)
 *  [时间戳转换](http://tool.chinaz.com/Tools/unixtime.aspx)
+*  [Banner生成](http://www.network-science.de/ascii/)
+
+## 源码下载
+
+*  [OpenJDK源码](http://hg.openjdk.java.net/jdk)
+*  [Spring源码](https://github.com/spring-projects/spring-framework/tags)
+*  [MyBatis源码](https://github.com/mybatis/mybatis-3/releases)
+*  [Tomcat源码](http://archive.apache.org/dist/tomcat/)
+*  [Zookeeper源码](https://zookeeper.apache.org/releases.html)
+*  [Dubbo源码](http://dubbo.apache.org/en-us/blog/download.html)
+*  [ActiveMQ源码](http://activemq.apache.org/download.html)
+*  [Netty源码](https://netty.io/downloads.html)
+
+## 软件下载
+
+*  [JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html) - Java开发工具包
+*  [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) - Java开发集成环境
+*  [MySQL](https://dev.mysql.com/downloads/mysql/) - MySQL数据库
+*  [Navicat Fot MySQL](http://www.navicat.com.cn/products/navicat-for-mysql) - MySQL客户端
+*  [MongoDB](https://www.mongodb.com/download-center) - MongoDB数据库
+*  [RoboMongo](http://mongodb-tools.com/tool/robomongo/) - MongoDB客户端
+*  [Redis](https://redis.io/download) - Redis缓存数据库
+*  [RedisDesktopManager](https://redisdesktop.com/download) - Redis客户端
+*  [Docker](https://www.docker.com/get-started) - Docker容器
+*  [Jenkins](https://jenkins.io/download/) - 自动化发布工具
+*  [Postman](https://www.getpostman.com/downloads/) - HTTP调试工具
