@@ -1,5 +1,6 @@
 ## 友情链接
 
+*   [纯洁的微笑](http://www.ityouknow.com/) - 分享技术，品味人生。
 *   [麦田技术博客](http://blog.itmyhome.com/) - 将来的你，一定会感激现在拼命努力的自己。
 *   [王登科-DK博客](http://www.wdk.pw/) - 一个技术创业者
 *   [spring4all](http://spring4all.com/) - Spring For All 垂直技术社区
@@ -21,7 +22,21 @@
 *   [程序员导航网站](http://tooool.org/) - 程序员的导航网站
 *   [Spring Boot中文导航](http://springboot.fun/) - Spring Boot的资源导航网站
 *   [Spring Cloud中文导航](http://springcloud.fun/) - Spring Cloud的资源导航网站
-*   [htmlToMD工具](http://relatos.top/2md/) - 在线将页面转发为markdown工具
 *   [wherebt](http://wherebt.com/) - 提供各种BT资源导航,主要收录了bt sync keys的分享网站
-*   [公众号编辑器](http://md.ityouknow.com/) - 可以以优雅的方式在微信公众号去发布markdown文章
 *   [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/) - 下载各种国外镜像
+
+## 在线工具
+
+*  [Json格式化](http://www.bejson.com/)
+*  [Cron表达式生成](http://cron.qqe2.com/)
+*  [正则表达式匹配](https://www.debuggex.com/)
+*  [二维码生成](https://cli.im/)
+*  [favicon生成](http://ico.duduxuexi.com/)
+*  [画图工具](https://www.processon.com/)
+*  [htmlToMD工具](http://relatos.top/2md/)
+*  [公众号编辑器](http://md.ityouknow.com/)
+*  [查看本机IP](http://httpbin.org/ip)
+*  [视频转GIF](https://ezgif.com/video-to-gif)
+*  [在线编程工具](https://www.jdoodle.com/)
+*  [在线翻译](http://dict.cn/)
+*  [时间戳转换](http://tool.chinaz.com/Tools/unixtime.aspx)
