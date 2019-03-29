@@ -10,7 +10,7 @@ tags:
 
 ## 环境准备
 
-- 启动zk，kafka
+- 启动zk，kafka_1.0.1
 - 创建一个Topic
 
 ## 具体实现
